@@ -1,0 +1,931 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Buscador de locales</title>
+
+	<link rel="shortcut icon" type="image/x-icon" href="./images/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="./css/ociopolis-theme/jquery-ui-1.10.3.css">
+	<link rel="stylesheet" type="text/css" href="./css/estilos.css">
+</head>
+<body>
+	<div id="fb-root"></div>
+	<header>
+		<div class="cabecera-fondo"></div>
+		<a href="index.html"><img src="images/logotipo.png" alt="Ociopolis. Búscate un plan." width="214px" height="114px"/></a>
+		<nav>
+			<ul>
+				<li id="nav-inicio">
+					<a class="transicion-enlace nav-separador" href="index.html">INICIO</a>
+				</li><li id="nav-eventos">
+					<a class="transicion-enlace" href="buscador-eventos.html">EVENTOS</a>
+				</li><li id="nav-locales" class="nav-seleccionado">
+					<a class="transicion-enlace" href="buscador-locales.html">LOCALES</a>
+					<div class="nav-seleccionado-fondo"></div>
+				</li><li id="nav-blog">
+					<a class="transicion-enlace" href="blog.html">BLOG</a>
+				</li>
+			</ul>
+		</nav>
+		<aside class="buscador-general">
+			<form action="buscador-general.html">
+				<div class="campo-formulario-wrapper">
+					<div class="campo-formulario-envoltura">
+						<input type="text" name="buscador-general-texto" id="buscador-general-texto" value="Buscar en ociopolis" class="campo-formulario" /><span id="buscador-general-submit" aria-hidden="true" class="icon-buscar campo-formulario-icono transicion-enlace"></span>
+					</div>
+				</div>
+			</form>
+		</aside>
+	</header>
+	<div class="cabecera cabecera-evento cabecera-color-generico">
+	</div>
+	<div id="separador-horizontal">
+		<div class="sombra-horizontal-abajo"></div>
+	</div>
+	<section class="informacion-rapida">
+		<div class="wrapper-informacion-rapida-buscador-locales">
+			<span aria-hidden="true" class="icono-buscador-locales icon-buscar"></span>
+			<form action="buscador-locales.html">
+				<div class="buscador-locales-parametro-columna">
+					<div class="buscador-locales-parametro">
+						<p class="buscador-locales-texto">Nombre</p>
+						<div class="campo-formulario-wrapper" id="campo-formulario-wrapper-nombre">
+							<div class="campo-formulario-envoltura">
+								<input type="text" name="buscador-locales-nombre" id="buscador-locales-nombre" class="campo-formulario" />
+							</div>
+						</div>
+					</div>
+					<div class="buscador-locales-parametro">
+						<p class="buscador-locales-texto">Provincia</p>
+						<div class="campo-formulario-wrapper puntero" id="campo-formulario-wrapper-provincia-local">
+							<div class="campo-formulario-envoltura">
+								<input type="text" name="buscador-locales-provincia-local" id="buscador-locales-provincia-local" value="Donde sea" class="campo-formulario puntero" readonly /><span id="buscador-local-provincia-click" aria-hidden="true" class="icon-ubicacion campo-formulario-icono transicion-enlace"></span>
+							</div>
+							<div class="campo-formulario-lista" id="campo-formulario-lista-provincia-local">
+								<ul>
+									<li class="transicion-enlace">A Coruña</li>
+									<li class="transicion-enlace">Alacant</li>
+									<li class="transicion-enlace">Albacete</li>
+									<li class="transicion-enlace">Almería</li>
+									<li class="transicion-enlace">Araba</li>
+									<li class="transicion-enlace">Asturias</li>
+									<li class="transicion-enlace">Ávila</li>
+									<li class="transicion-enlace">Badajoz</li>
+									<li class="transicion-enlace">Balears</li>
+									<li class="transicion-enlace">Barcelona</li>
+									<li class="transicion-enlace">Bizkaia</li>
+									<li class="transicion-enlace">Burgos</li>
+									<li class="transicion-enlace">Cáceres</li>
+									<li class="transicion-enlace">Cádiz</li>
+									<li class="transicion-enlace">Cantabria</li>
+									<li class="transicion-enlace">Castelló</li>
+									<li class="transicion-enlace">Ceuta</li>
+									<li class="transicion-enlace">Ciudad Real</li>
+									<li class="transicion-enlace">Córdoba</li>
+									<li class="transicion-enlace">Cuenca</li>
+									<li class="transicion-enlace">Donde sea</li>
+									<li class="transicion-enlace">Girona</li>
+									<li class="transicion-enlace">Granada</li>
+									<li class="transicion-enlace">Guadalajara</li>
+									<li class="transicion-enlace">Gipuzkoa</li>
+									<li class="transicion-enlace">Huelva</li>
+									<li class="transicion-enlace">Huesca</li>
+									<li class="transicion-enlace">Jaén</li>
+									<li class="transicion-enlace">La Rioja</li>
+									<li class="transicion-enlace">Las Palmas</li>
+									<li class="transicion-enlace">León</li>
+									<li class="transicion-enlace">Lleida</li>
+									<li class="transicion-enlace">Lugo</li>
+									<li class="transicion-enlace">Madrid</li>
+									<li class="transicion-enlace">Málaga</li>
+									<li class="transicion-enlace">Melilla</li>
+									<li class="transicion-enlace">Murcia</li>
+									<li class="transicion-enlace">Navarra</li>
+									<li class="transicion-enlace">Ourense</li>
+									<li class="transicion-enlace">Palencia</li>
+									<li class="transicion-enlace">Pontevedra</li>
+									<li class="transicion-enlace">Salamanca</li>
+									<li class="transicion-enlace">Segovia</li>
+									<li class="transicion-enlace">Sevilla</li>
+									<li class="transicion-enlace">Soria</li>
+									<li class="transicion-enlace">Tenerife</li>
+									<li class="transicion-enlace">Tarragona</li>
+									<li class="transicion-enlace">Teruel</li>
+									<li class="transicion-enlace">Toledo</li>
+									<li class="transicion-enlace">València</li>
+									<li class="transicion-enlace">Valladolid</li>
+									<li class="transicion-enlace">Zamora</li>
+									<li class="transicion-enlace">Zaragoza</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="buscador-locales-parametro-columna">
+					<div class="buscador-locales-parametro">
+						<p class="buscador-locales-texto">Eventos activos</p>
+						<div class="campo-formulario-wrapper puntero" id="campo-formulario-wrapper-activos">
+							<div class="campo-formulario-envoltura">
+								<input type="text" name="buscador-locales-activos" id="buscador-locales-activos" value="Indiferente" class="campo-formulario puntero" readonly /><span id="buscador-local-activos-click" aria-hidden="true" class="icon-activos campo-formulario-icono transicion-enlace"></span>
+							</div>
+							<div class="campo-formulario-lista" id="campo-formulario-lista-activos">
+								<ul>
+									<li class="transicion-enlace">Indiferente</li>
+									<li class="transicion-enlace">Hoy</li>
+									<li class="transicion-enlace">En una semana</li>
+									<li class="transicion-enlace">En un mes</li>
+									<li class="transicion-enlace">En un año</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="buscador-locales-parametro">
+						<p class="buscador-locales-texto">Palabras clave</p>
+						<div class="campo-formulario-wrapper" id="campo-formulario-wrapper-clave-local">
+							<div class="campo-formulario-envoltura">
+								<input type="text" name="buscador-locales-clave-local" id="buscador-locales-clave-local" class="campo-formulario" />
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="buscador-locales-parametro-columna">
+					<div class="buscador-locales-parametro">
+						<p class="buscador-locales-texto">Instalaciones</p>
+						<div class="elemento-primero-horizontal-izquierda campo-formulario-wrapper-check puntero">
+							<div class="campo-formulario-envoltura-check">
+								<div class="campo-formulario-check puntero" id="buscador-locales-check-musica">
+									<input type="hidden" name="buscador-local-check-musica-click" value="0" />
+									<span id="buscador-local-check-musica-click" aria-hidden="true" class="icon-musica campo-formulario-check-icono transicion-enlace"></span>
+									<span aria-hidden="true" class="campo-formulario-check-flecha icon-flecha-izquierda"></span>
+									<span class="campo-formulario-check-texto">música</span>
+								</div>
+							</div>
+						</div><div class="campo-formulario-wrapper-check puntero">
+							<div class="campo-formulario-envoltura-check">
+								<div class="campo-formulario-check puntero" id="buscador-locales-check-terraza">
+									<input type="hidden" name="buscador-local-check-terraza-click" value="0" />
+									<span id="buscador-local-check-terraza-click" aria-hidden="true" class="icon-terraza campo-formulario-check-icono transicion-enlace"></span>
+									<span aria-hidden="true" class="campo-formulario-check-flecha icon-flecha-izquierda"></span>
+									<span class="campo-formulario-check-texto">terraza</span>
+								</div>
+							</div>
+						</div><div class="campo-formulario-wrapper-check puntero">
+							<div class="campo-formulario-envoltura-check">
+								<div class="campo-formulario-check puntero" id="buscador-locales-check-wifi">
+									<input type="hidden" name="buscador-local-check-wifi-click" value="0" />
+									<span id="buscador-local-check-wifi-click" aria-hidden="true" class="icon-wifi campo-formulario-check-icono transicion-enlace"></span>
+									<span aria-hidden="true" class="campo-formulario-check-flecha icon-flecha-izquierda"></span>
+									<span class="campo-formulario-check-texto">wifi</span>
+								</div>
+							</div>
+						</div><div class="campo-formulario-wrapper-check puntero">
+							<div class="campo-formulario-envoltura-check">
+								<div class="campo-formulario-check puntero" id="buscador-locales-check-cocina">
+									<input type="hidden" name="buscador-local-check-cocina-click" value="0" />
+									<span id="buscador-local-check-cocina-click" aria-hidden="true" class="icon-cocina campo-formulario-check-icono transicion-enlace"></span>
+									<span aria-hidden="true" class="campo-formulario-check-flecha icon-flecha-izquierda"></span>
+									<span class="campo-formulario-check-texto">cocina</span>
+								</div>
+							</div>
+						</div><div class="campo-formulario-wrapper-check puntero">
+							<div class="campo-formulario-envoltura-check">
+								<div class="campo-formulario-check puntero" id="buscador-locales-check-tarjeta">
+									<input type="hidden" name="buscador-local-check-tarjeta-click" value="0" />
+									<span id="buscador-local-check-tarjeta-click" aria-hidden="true" class="icon-tarjeta campo-formulario-check-icono transicion-enlace"></span>
+									<span aria-hidden="true" class="campo-formulario-check-flecha icon-flecha-izquierda"></span>
+									<span class="campo-formulario-check-texto">tarjeta de crédito</span>
+								</div>
+							</div>
+						</div><div class="campo-formulario-wrapper-check puntero">
+							<div class="campo-formulario-envoltura-check">
+								<div class="campo-formulario-check puntero" id="buscador-locales-check-pista-baile">
+									<input type="hidden" name="buscador-local-check-pista-baile-click" value="0" />
+									<span id="buscador-local-check-pista-baile-click" aria-hidden="true" class="icon-pista-baile campo-formulario-check-icono transicion-enlace"></span>
+									<span aria-hidden="true" class="campo-formulario-check-flecha icon-flecha-izquierda"></span>
+									<span class="campo-formulario-check-texto">pista de baile</span>
+								</div>
+							</div>
+						</div><div class="campo-formulario-wrapper-check puntero">
+							<div class="campo-formulario-envoltura-check">
+								<div class="campo-formulario-check puntero" id="buscador-locales-check-guardarropa">
+									<input type="hidden" name="buscador-local-check-guardarropa-click" value="0" />
+									<span id="buscador-local-check-guardarropa-click" aria-hidden="true" class="icon-guardarropa campo-formulario-check-icono transicion-enlace"></span>
+									<span aria-hidden="true" class="campo-formulario-check-flecha icon-flecha-izquierda"></span>
+									<span class="campo-formulario-check-texto">guardarropa</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="buscador-locales-parametro">
+						<p class="buscador-locales-texto"></p>
+						<div class="elemento-primero-horizontal-izquierda campo-formulario-wrapper-check puntero">
+							<div class="campo-formulario-envoltura-check">
+								<div class="campo-formulario-check puntero" id="buscador-locales-check-minusvalidos">
+									<input type="hidden" name="buscador-local-check-minusvalidos-click" value="0" />
+									<span id="buscador-local-check-minusvalidos-click" aria-hidden="true" class="icon-minusvalidos campo-formulario-check-icono transicion-enlace"></span>
+									<span aria-hidden="true" class="campo-formulario-check-flecha icon-flecha-izquierda"></span>
+									<span class="campo-formulario-check-texto">acceso minusválidos</span>
+								</div>
+							</div>
+						</div><div class="campo-formulario-wrapper-check puntero">
+							<div class="campo-formulario-envoltura-check">
+								<div class="campo-formulario-check puntero" id="buscador-locales-check-parking">
+									<input type="hidden" name="buscador-local-check-parking-click" value="0" />
+									<span id="buscador-local-check-parking-click" aria-hidden="true" class="icon-parking campo-formulario-check-icono transicion-enlace"></span>
+									<span aria-hidden="true" class="campo-formulario-check-flecha icon-flecha-izquierda"></span>
+									<span class="campo-formulario-check-texto">parking</span>
+								</div>
+							</div>
+						</div><div class="campo-formulario-wrapper-check puntero">
+							<div class="campo-formulario-envoltura-check">
+								<div class="campo-formulario-check puntero" id="buscador-locales-check-juegos-mesa">
+									<input type="hidden" name="buscador-local-check-juegos-mesa-click" value="0" />
+									<span id="buscador-local-check-juegos-mesa-click" aria-hidden="true" class="icon-juegos-mesa campo-formulario-check-icono transicion-enlace"></span>
+									<span aria-hidden="true" class="campo-formulario-check-flecha icon-flecha-izquierda"></span>
+									<span class="campo-formulario-check-texto">juegos de mesa</span>
+								</div>
+							</div>
+						</div><div class="campo-formulario-wrapper-check puntero">
+							<div class="campo-formulario-envoltura-check">
+								<div class="campo-formulario-check puntero" id="buscador-locales-check-juegos-salon">
+									<input type="hidden" name="buscador-local-check-juegos-salon-click" value="0" />
+									<span id="buscador-local-check-juegos-salon-click" aria-hidden="true" class="icon-juegos-salon campo-formulario-check-icono transicion-enlace"></span>
+									<span aria-hidden="true" class="campo-formulario-check-flecha icon-flecha-izquierda"></span>
+									<span class="campo-formulario-check-texto">juegos de salón</span>
+								</div>
+							</div>
+						</div><div class="campo-formulario-wrapper-check puntero">
+							<div class="campo-formulario-envoltura-check">
+								<div class="campo-formulario-check puntero" id="buscador-locales-check-biblioteca">
+									<input type="hidden" name="buscador-local-check-biblioteca-click" value="0" />
+									<span id="buscador-local-check-biblioteca-click" aria-hidden="true" class="icon-biblioteca campo-formulario-check-icono transicion-enlace"></span>
+									<span aria-hidden="true" class="campo-formulario-check-flecha icon-flecha-izquierda"></span>
+									<span class="campo-formulario-check-texto">biblioteca</span>
+								</div>
+							</div>
+						</div><div class="campo-formulario-wrapper-check puntero">
+							<div class="campo-formulario-envoltura-check">
+								<div class="campo-formulario-check puntero" id="buscador-locales-check-television">
+									<input type="hidden" name="buscador-local-check-television-click" value="0" />
+									<span id="buscador-local-check-television-click" aria-hidden="true" class="icon-television campo-formulario-check-icono transicion-enlace"></span>
+									<span aria-hidden="true" class="campo-formulario-check-flecha icon-flecha-izquierda"></span>
+									<span class="campo-formulario-check-texto">televisión</span>
+								</div>
+							</div>
+						</div><div class="campo-formulario-wrapper-check puntero">
+							<div class="campo-formulario-envoltura-check">
+								<div class="campo-formulario-check puntero" id="buscador-locales-check-equipo-karaoke">
+									<input type="hidden" name="buscador-local-check-equipo-karaoke-click" value="0" />
+									<span id="buscador-local-check-equipo-karaoke-click" aria-hidden="true" class="icon-equipo-karaoke campo-formulario-check-icono transicion-enlace"></span>
+									<span aria-hidden="true" class="campo-formulario-check-flecha icon-flecha-izquierda"></span>
+									<span class="campo-formulario-check-texto">equipo de karaoke</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="buscador-locales-parametro-columna">
+					<div class="buscador-locales-parametro">
+						<a class="transicion-enlace efecto-boton" href="buscador-eventos.html">BUSCAR</a>
+					</div>
+				</div>
+			</form>
+		</div>
+	</section>
+	<div id="wrapper-cuerpo">
+		<div id="columna-izquierda">
+			<div class="separacion-informacion-rapida-buscador"></div>
+			<div id="fondo-columna-izquierda"></div>
+			<h2 class="separacion-primer-elemento-columna">Locales resultantes</h2>
+			<p id="introduccion-proximos-eventos">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in odio sed massa varius luctus.</p>
+			<section id="listado-locales">
+				<article class="local">
+					<div class="sombra-horizontal-ticket"></div>
+					<a href="local.html"><img src="./images/locales/local1/fotos/perfil.jpg" alt="nombre del local" class="transicion-enlace" /></a><div class="info-local">
+						<div class="sombra-perfil"></div>
+						<h3><a href="local.html" class="transicion-enlace">El Kraken</a></h3>
+						<p class="provincia-local"><a href="buscador-locales.html" class="transicion-enlace">Valencia</a></p>
+						<p class="eventos-local"><a href="lista-eventos.html" class="transicion-enlace">17</a> eventos publicados, <a href="lista-eventos" class="transicion-enlace">3</a> activos</p>
+						<p class="descripcion-local">Aenean et ullamcorper sapien. Morbi interdum mollis sapien vitae sollicitudin.</p>
+						<a href="local.html" class="mas-info-wrapper"><span aria-hidden="true" class="icono-mas-info icon-mas transicion-enlace"></span><span class="texto-mas-info">más info</span></a>
+					</div><div class="info-local-adicional">
+						<div class="instalaciones-local">
+							<div class="columna-contenedor-icono-instalaciones-resumen">
+								<div class="contenedor-icono-instalaciones-resumen">
+									<span aria-hidden="true" class="icono-instalaciones-resumen transicion-enlace icon-musica"></span>
+									<span aria-hidden="true" class="flecha-ayuda-icono-intalaciones icon-flecha-izquierda"></span>
+									<span class="texto-ayuda-icono-instalaciones-resumen">música</span>
+								</div>
+								<div class="contenedor-icono-instalaciones-resumen">
+									<span aria-hidden="true" class="icono-instalaciones-resumen transicion-enlace icon-terraza"></span>
+									<span aria-hidden="true" class="flecha-ayuda-icono-intalaciones icon-flecha-izquierda"></span>
+									<span class="texto-ayuda-icono-instalaciones-resumen">terraza</span>
+								</div>
+								<div class="contenedor-icono-instalaciones-resumen">
+									<span aria-hidden="true" class="icono-instalaciones-resumen transicion-enlace icon-wifi"></span>
+									<span aria-hidden="true" class="flecha-ayuda-icono-intalaciones icon-flecha-izquierda"></span>
+									<span class="texto-ayuda-icono-instalaciones-resumen">wifi</span>
+								</div>
+								<div class="contenedor-icono-instalaciones-resumen">
+									<span aria-hidden="true" class="icono-instalaciones-resumen transicion-enlace icon-cocina"></span>
+									<span aria-hidden="true" class="flecha-ayuda-icono-intalaciones icon-flecha-izquierda"></span>
+									<span class="texto-ayuda-icono-instalaciones-resumen">cocina</span>
+								</div>
+								<div class="contenedor-icono-instalaciones-resumen">
+									<span aria-hidden="true" class="icono-instalaciones-resumen transicion-enlace icon-tarjeta"></span>
+									<span aria-hidden="true" class="flecha-ayuda-icono-intalaciones icon-flecha-izquierda"></span>
+									<span class="texto-ayuda-icono-instalaciones-resumen">tarjeta de crédito</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+				<article class="local">
+					<div class="sombra-horizontal-ticket"></div>
+					<a href="local.html"><img src="./images/locales/local2/fotos/perfil.jpg" alt="nombre del local" class="transicion-enlace" /></a><div class="info-local">
+						<div class="sombra-perfil"></div>
+						<h3><a href="local.html" class="transicion-enlace">Lord Byron</a></h3>
+						<p class="provincia-local"><a href="buscador-locales.html" class="transicion-enlace">Valencia</a></p>
+						<p class="eventos-local"><a href="lista-eventos.html" class="transicion-enlace">5</a> eventos publicados, <a href="lista-eventos" class="transicion-enlace">5</a> activos</p>
+						<p class="descripcion-local">Aenean et ullamcorper sapien. Morbi interdum mollis sapien vitae sollicitudin.</p>
+						<a href="local.html" class="mas-info-wrapper"><span aria-hidden="true" class="icono-mas-info icon-mas transicion-enlace"></span><span class="texto-mas-info">más info</span></a>
+					</div><div class="info-local-adicional">
+						<div class="instalaciones-local">
+							<div class="columna-contenedor-icono-instalaciones-resumen">
+								<div class="contenedor-icono-instalaciones-resumen">
+									<span aria-hidden="true" class="icono-instalaciones-resumen transicion-enlace icon-musica"></span>
+									<span aria-hidden="true" class="flecha-ayuda-icono-intalaciones icon-flecha-izquierda"></span>
+									<span class="texto-ayuda-icono-instalaciones-resumen">música</span>
+								</div>
+								<div class="contenedor-icono-instalaciones-resumen">
+									<span aria-hidden="true" class="icono-instalaciones-resumen transicion-enlace icon-tarjeta"></span>
+									<span aria-hidden="true" class="flecha-ayuda-icono-intalaciones icon-flecha-izquierda"></span>
+									<span class="texto-ayuda-icono-instalaciones-resumen">tarjeta de crédito</span>
+								</div>
+								<div class="contenedor-icono-instalaciones-resumen">
+									<span aria-hidden="true" class="icono-instalaciones-resumen transicion-enlace icon-pista-baile"></span>
+									<span aria-hidden="true" class="flecha-ayuda-icono-intalaciones icon-flecha-izquierda"></span>
+									<span class="texto-ayuda-icono-instalaciones-resumen">pista de baile</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+				<article class="local">
+					<div class="sombra-horizontal-ticket"></div>
+					<a href="local.html"><img src="./images/locales/local3/fotos/perfil.jpg" alt="nombre del local" class="transicion-enlace" /></a><div class="info-local">
+						<div class="sombra-perfil"></div>
+						<h3><a href="local.html" class="transicion-enlace">La naranja mecánica</a></h3>
+						<p class="provincia-local"><a href="buscador-locales.html" class="transicion-enlace">Valencia</a></p>
+						<p class="eventos-local"><a href="lista-eventos.html" class="transicion-enlace">4</a> eventos publicados, <a href="lista-eventos" class="transicion-enlace">2</a> activos</p>
+						<p class="descripcion-local">Aenean et ullamcorper sapien. Morbi interdum mollis sapien vitae sollicitudin.</p>
+						<a href="local.html" class="mas-info-wrapper"><span aria-hidden="true" class="icono-mas-info icon-mas transicion-enlace"></span><span class="texto-mas-info">más info</span></a>
+					</div><div class="info-local-adicional">
+						<div class="instalaciones-local">
+							<div class="columna-contenedor-icono-instalaciones-resumen">
+								<div class="contenedor-icono-instalaciones-resumen">
+									<span aria-hidden="true" class="icono-instalaciones-resumen transicion-enlace icon-juegos-salon"></span>
+									<span aria-hidden="true" class="flecha-ayuda-icono-intalaciones icon-flecha-izquierda"></span>
+									<span class="texto-ayuda-icono-instalaciones-resumen">juegos de salón</span>
+								</div>
+							</div>
+							<div class="columna-contenedor-icono-instalaciones-resumen">
+								<div class="contenedor-icono-instalaciones-resumen">
+									<span aria-hidden="true" class="icono-instalaciones-resumen transicion-enlace icon-pista-baile"></span>
+									<span aria-hidden="true" class="flecha-ayuda-icono-intalaciones icon-flecha-izquierda"></span>
+									<span class="texto-ayuda-icono-instalaciones-resumen">pista de baile</span>
+								</div>
+								<div class="contenedor-icono-instalaciones-resumen">
+									<span aria-hidden="true" class="icono-instalaciones-resumen transicion-enlace icon-guardarropa"></span>
+									<span aria-hidden="true" class="flecha-ayuda-icono-intalaciones icon-flecha-izquierda"></span>
+									<span class="texto-ayuda-icono-instalaciones-resumen">guardarropa</span>
+								</div>
+								<div class="contenedor-icono-instalaciones-resumen">
+									<span aria-hidden="true" class="icono-instalaciones-resumen transicion-enlace icon-minusvalidos"></span>
+									<span aria-hidden="true" class="flecha-ayuda-icono-intalaciones icon-flecha-izquierda"></span>
+									<span class="texto-ayuda-icono-instalaciones-resumen">acceso minúsvalidos</span>
+								</div>
+								<div class="contenedor-icono-instalaciones-resumen">
+									<span aria-hidden="true" class="icono-instalaciones-resumen transicion-enlace icon-parking"></span>
+									<span aria-hidden="true" class="flecha-ayuda-icono-intalaciones icon-flecha-izquierda"></span>
+									<span class="texto-ayuda-icono-instalaciones-resumen">parking</span>
+								</div>
+								<div class="contenedor-icono-instalaciones-resumen">
+									<span aria-hidden="true" class="icono-instalaciones-resumen transicion-enlace icon-juegos-mesa"></span>
+									<span aria-hidden="true" class="flecha-ayuda-icono-intalaciones icon-flecha-izquierda"></span>
+									<span class="texto-ayuda-icono-instalaciones-resumen">juegos de mesa</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+				<article class="local">
+					<div class="sombra-horizontal-ticket"></div>
+					<a href="local.html"><img src="./images/locales/local4/fotos/perfil.jpg" alt="nombre del local" class="transicion-enlace" /></a><div class="info-local">
+						<div class="sombra-perfil"></div>
+						<h3><a href="local.html" class="transicion-enlace">El Magic</a></h3>
+						<p class="provincia-local"><a href="buscador-locales.html" class="transicion-enlace">Valencia</a></p>
+						<p class="eventos-local"><a href="lista-eventos.html" class="transicion-enlace">27</a> eventos publicados, <a href="lista-eventos" class="transicion-enlace">1</a> activos</p>
+						<p class="descripcion-local">Aenean et ullamcorper sapien. Morbi interdum mollis sapien vitae sollicitudin.</p>
+						<a href="local.html" class="mas-info-wrapper"><span aria-hidden="true" class="icono-mas-info icon-mas transicion-enlace"></span><span class="texto-mas-info">más info</span></a>
+					</div><div class="info-local-adicional">
+						<div class="instalaciones-local">
+							<div class="columna-contenedor-icono-instalaciones-resumen">
+								<div class="contenedor-icono-instalaciones-resumen">
+									<span aria-hidden="true" class="icono-instalaciones-resumen transicion-enlace icon-equipo-karaoke"></span>
+									<span aria-hidden="true" class="flecha-ayuda-icono-intalaciones icon-flecha-izquierda"></span>
+									<span class="texto-ayuda-icono-instalaciones-resumen">equipo de karaoke</span>
+								</div>
+							</div>
+							<div class="columna-contenedor-icono-instalaciones-resumen">
+								<div class="contenedor-icono-instalaciones-resumen">
+									<span aria-hidden="true" class="icono-instalaciones-resumen transicion-enlace icon-parking"></span>
+									<span aria-hidden="true" class="flecha-ayuda-icono-intalaciones icon-flecha-izquierda"></span>
+									<span class="texto-ayuda-icono-instalaciones-resumen">parking</span>
+								</div>
+								<div class="contenedor-icono-instalaciones-resumen">
+									<span aria-hidden="true" class="icono-instalaciones-resumen transicion-enlace icon-juegos-mesa"></span>
+									<span aria-hidden="true" class="flecha-ayuda-icono-intalaciones icon-flecha-izquierda"></span>
+									<span class="texto-ayuda-icono-instalaciones-resumen">juegos de mesa</span>
+								</div>
+								<div class="contenedor-icono-instalaciones-resumen">
+									<span aria-hidden="true" class="icono-instalaciones-resumen transicion-enlace icon-juegos-salon"></span>
+									<span aria-hidden="true" class="flecha-ayuda-icono-intalaciones icon-flecha-izquierda"></span>
+									<span class="texto-ayuda-icono-instalaciones-resumen">juegos de salón</span>
+								</div>
+								<div class="contenedor-icono-instalaciones-resumen">
+									<span aria-hidden="true" class="icono-instalaciones-resumen transicion-enlace icon-biblioteca"></span>
+									<span aria-hidden="true" class="flecha-ayuda-icono-intalaciones icon-flecha-izquierda"></span>
+									<span class="texto-ayuda-icono-instalaciones-resumen">biblioteca</span>
+								</div>
+								<div class="contenedor-icono-instalaciones-resumen">
+									<span aria-hidden="true" class="icono-instalaciones-resumen transicion-enlace icon-television"></span>
+									<span aria-hidden="true" class="flecha-ayuda-icono-intalaciones icon-flecha-izquierda"></span>
+									<span class="texto-ayuda-icono-instalaciones-resumen">televisión</span>
+								</div>
+							</div>
+							<div class="columna-contenedor-icono-instalaciones-resumen">
+								<div class="contenedor-icono-instalaciones-resumen">
+									<span aria-hidden="true" class="icono-instalaciones-resumen transicion-enlace icon-cocina"></span>
+									<span aria-hidden="true" class="flecha-ayuda-icono-intalaciones icon-flecha-izquierda"></span>
+									<span class="texto-ayuda-icono-instalaciones-resumen">cocina</span>
+								</div>
+								<div class="contenedor-icono-instalaciones-resumen">
+									<span aria-hidden="true" class="icono-instalaciones-resumen transicion-enlace icon-tarjeta"></span>
+									<span aria-hidden="true" class="flecha-ayuda-icono-intalaciones icon-flecha-izquierda"></span>
+									<span class="texto-ayuda-icono-instalaciones-resumen">tarjeta de crédito</span>
+								</div>
+								<div class="contenedor-icono-instalaciones-resumen">
+									<span aria-hidden="true" class="icono-instalaciones-resumen transicion-enlace icon-pista-baile"></span>
+									<span aria-hidden="true" class="flecha-ayuda-icono-intalaciones icon-flecha-izquierda"></span>
+									<span class="texto-ayuda-icono-instalaciones-resumen">pista de baile</span>
+								</div>
+								<div class="contenedor-icono-instalaciones-resumen">
+									<span aria-hidden="true" class="icono-instalaciones-resumen transicion-enlace icon-guardarropa"></span>
+									<span aria-hidden="true" class="flecha-ayuda-icono-intalaciones icon-flecha-izquierda"></span>
+									<span class="texto-ayuda-icono-instalaciones-resumen">guardarropa</span>
+								</div>
+								<div class="contenedor-icono-instalaciones-resumen">
+									<span aria-hidden="true" class="icono-instalaciones-resumen transicion-enlace icon-minusvalidos"></span>
+									<span aria-hidden="true" class="flecha-ayuda-icono-intalaciones icon-flecha-izquierda"></span>
+									<span class="texto-ayuda-icono-instalaciones-resumen">acceso minúsvalidos</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+				<article class="local">
+					<div class="sombra-horizontal-ticket"></div>
+					<a href="local.html"><img src="./images/locales/local5/fotos/perfil.jpg" alt="nombre del local" class="transicion-enlace" /></a><div class="info-local">
+						<div class="sombra-perfil"></div>
+						<h3><a href="local.html" class="transicion-enlace">El Club de los Poetas</a></h3>
+						<p class="provincia-local"><a href="buscador-locales.html" class="transicion-enlace">Valencia</a></p>
+						<p class="eventos-local"><a href="lista-eventos.html" class="transicion-enlace">21</a> eventos publicados, <a href="lista-eventos" class="transicion-enlace">17</a> activos</p>
+						<p class="descripcion-local">Aenean et ullamcorper sapien. Morbi interdum mollis sapien vitae sollicitudin.</p>
+						<a href="local.html" class="mas-info-wrapper"><span aria-hidden="true" class="icono-mas-info icon-mas transicion-enlace"></span><span class="texto-mas-info">más info</span></a>
+					</div><div class="info-local-adicional">
+						<div class="instalaciones-local">
+							<div class="columna-contenedor-icono-instalaciones-resumen">
+								<div class="contenedor-icono-instalaciones-resumen">
+									<span aria-hidden="true" class="icono-instalaciones-resumen transicion-enlace icon-cocina"></span>
+									<span aria-hidden="true" class="flecha-ayuda-icono-intalaciones icon-flecha-izquierda"></span>
+									<span class="texto-ayuda-icono-instalaciones-resumen">cocina</span>
+								</div>
+								<div class="contenedor-icono-instalaciones-resumen">
+									<span aria-hidden="true" class="icono-instalaciones-resumen transicion-enlace icon-juegos-mesa"></span>
+									<span aria-hidden="true" class="flecha-ayuda-icono-intalaciones icon-flecha-izquierda"></span>
+									<span class="texto-ayuda-icono-instalaciones-resumen">juegos de mesa</span>
+								</div>
+								<div class="contenedor-icono-instalaciones-resumen">
+									<span aria-hidden="true" class="icono-instalaciones-resumen transicion-enlace icon-television"></span>
+									<span aria-hidden="true" class="flecha-ayuda-icono-intalaciones icon-flecha-izquierda"></span>
+									<span class="texto-ayuda-icono-instalaciones-resumen">televisión</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+				<article class="local">
+					<div class="sombra-horizontal-ticket"></div>
+					<a href="local.html"><img src="./images/locales/local6/fotos/perfil.jpg" alt="nombre del local" class="transicion-enlace" /></a><div class="info-local">
+						<div class="sombra-perfil"></div>
+						<h3><a href="local.html" class="transicion-enlace">Kafka</a></h3>
+						<p class="provincia-local"><a href="buscador-locales.html" class="transicion-enlace">Valencia</a></p>
+						<p class="eventos-local"><a href="lista-eventos.html" class="transicion-enlace">0</a> eventos publicados, <a href="lista-eventos" class="transicion-enlace">0</a> activos</p>
+						<p class="descripcion-local">Aenean et ullamcorper sapien. Morbi interdum mollis sapien vitae sollicitudin.</p>
+						<a href="local.html" class="mas-info-wrapper"><span aria-hidden="true" class="icono-mas-info icon-mas transicion-enlace"></span><span class="texto-mas-info">más info</span></a>
+					</div><div class="info-local-adicional">
+						<div class="instalaciones-local">
+							<div class="columna-contenedor-icono-instalaciones-resumen">
+								<div class="contenedor-icono-instalaciones-resumen">
+									<span aria-hidden="true" class="icono-instalaciones-resumen transicion-enlace icon-parking"></span>
+									<span aria-hidden="true" class="flecha-ayuda-icono-intalaciones icon-flecha-izquierda"></span>
+									<span class="texto-ayuda-icono-instalaciones-resumen">parking</span>
+								</div>
+								<div class="contenedor-icono-instalaciones-resumen">
+									<span aria-hidden="true" class="icono-instalaciones-resumen transicion-enlace icon-juegos-salon"></span>
+									<span aria-hidden="true" class="flecha-ayuda-icono-intalaciones icon-flecha-izquierda"></span>
+									<span class="texto-ayuda-icono-instalaciones-resumen">juegos de salón</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+				<article class="local">
+					<div class="sombra-horizontal-ticket"></div>
+					<a href="local.html"><img src="./images/locales/local7/fotos/perfil.jpg" alt="nombre del local" class="transicion-enlace" /></a><div class="info-local">
+						<div class="sombra-perfil"></div>
+						<h3><a href="local.html" class="transicion-enlace">Standby</a></h3>
+						<p class="provincia-local"><a href="buscador-locales.html" class="transicion-enlace">Valencia</a></p>
+						<p class="eventos-local"><a href="lista-eventos.html" class="transicion-enlace">135</a> eventos publicados, <a href="lista-eventos" class="transicion-enlace">17</a> activos</p>
+						<p class="descripcion-local">Aenean et ullamcorper sapien. Morbi interdum mollis sapien vitae sollicitudin.</p>
+						<a href="local.html" class="mas-info-wrapper"><span aria-hidden="true" class="icono-mas-info icon-mas transicion-enlace"></span><span class="texto-mas-info">más info</span></a>
+					</div><div class="info-local-adicional">
+						<div class="instalaciones-local">
+							<div class="columna-contenedor-icono-instalaciones-resumen">
+								<div class="contenedor-icono-instalaciones-resumen">
+									<span aria-hidden="true" class="icono-instalaciones-resumen transicion-enlace icon-juegos-mesa"></span>
+									<span aria-hidden="true" class="flecha-ayuda-icono-intalaciones icon-flecha-izquierda"></span>
+									<span class="texto-ayuda-icono-instalaciones-resumen">juegos de mesa</span>
+								</div>
+								<div class="contenedor-icono-instalaciones-resumen">
+									<span aria-hidden="true" class="icono-instalaciones-resumen transicion-enlace icon-juegos-salon"></span>
+									<span aria-hidden="true" class="flecha-ayuda-icono-intalaciones icon-flecha-izquierda"></span>
+									<span class="texto-ayuda-icono-instalaciones-resumen">juegos de salón</span>
+								</div>
+								<div class="contenedor-icono-instalaciones-resumen">
+									<span aria-hidden="true" class="icono-instalaciones-resumen transicion-enlace icon-biblioteca"></span>
+									<span aria-hidden="true" class="flecha-ayuda-icono-intalaciones icon-flecha-izquierda"></span>
+									<span class="texto-ayuda-icono-instalaciones-resumen">biblioteca</span>
+								</div>
+								<div class="contenedor-icono-instalaciones-resumen">
+									<span aria-hidden="true" class="icono-instalaciones-resumen transicion-enlace icon-equipo-karaoke"></span>
+									<span aria-hidden="true" class="flecha-ayuda-icono-intalaciones icon-flecha-izquierda"></span>
+									<span class="texto-ayuda-icono-instalaciones-resumen">equipo de karaoke</span>
+								</div>
+							</div>
+							<div class="columna-contenedor-icono-instalaciones-resumen">
+								<div class="contenedor-icono-instalaciones-resumen">
+									<span aria-hidden="true" class="icono-instalaciones-resumen transicion-enlace icon-wifi"></span>
+									<span aria-hidden="true" class="flecha-ayuda-icono-intalaciones icon-flecha-izquierda"></span>
+									<span class="texto-ayuda-icono-instalaciones-resumen">wifi</span>
+								</div>
+								<div class="contenedor-icono-instalaciones-resumen">
+									<span aria-hidden="true" class="icono-instalaciones-resumen transicion-enlace icon-cocina"></span>
+									<span aria-hidden="true" class="flecha-ayuda-icono-intalaciones icon-flecha-izquierda"></span>
+									<span class="texto-ayuda-icono-instalaciones-resumen">cocina</span>
+								</div>
+								<div class="contenedor-icono-instalaciones-resumen">
+									<span aria-hidden="true" class="icono-instalaciones-resumen transicion-enlace icon-tarjeta"></span>
+									<span aria-hidden="true" class="flecha-ayuda-icono-intalaciones icon-flecha-izquierda"></span>
+									<span class="texto-ayuda-icono-instalaciones-resumen">tarjeta de crédito</span>
+								</div>
+								<div class="contenedor-icono-instalaciones-resumen">
+									<span aria-hidden="true" class="icono-instalaciones-resumen transicion-enlace icon-pista-baile"></span>
+									<span aria-hidden="true" class="flecha-ayuda-icono-intalaciones icon-flecha-izquierda"></span>
+									<span class="texto-ayuda-icono-instalaciones-resumen">pista de baile</span>
+								</div>
+								<div class="contenedor-icono-instalaciones-resumen">
+									<span aria-hidden="true" class="icono-instalaciones-resumen transicion-enlace icon-parking"></span>
+									<span aria-hidden="true" class="flecha-ayuda-icono-intalaciones icon-flecha-izquierda"></span>
+									<span class="texto-ayuda-icono-instalaciones-resumen">parking</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+				<article class="local">
+					<div class="sombra-horizontal-ticket"></div>
+					<a href="local.html"><img src="./images/locales/local8/fotos/perfil.jpg" alt="nombre del local" class="transicion-enlace" /></a><div class="info-local">
+						<div class="sombra-perfil"></div>
+						<h3><a href="local.html" class="transicion-enlace">El Kraken</a></h3>
+						<p class="provincia-local"><a href="buscador-locales.html" class="transicion-enlace">Valencia</a></p>
+						<p class="eventos-local"><a href="lista-eventos.html" class="transicion-enlace">61</a> eventos publicados, <a href="lista-eventos" class="transicion-enlace">23</a> activos</p>
+						<p class="descripcion-local">Aenean et ullamcorper sapien. Morbi interdum mollis sapien vitae sollicitudin.</p>
+						<a href="local.html" class="mas-info-wrapper"><span aria-hidden="true" class="icono-mas-info icon-mas transicion-enlace"></span><span class="texto-mas-info">más info</span></a>
+					</div><div class="info-local-adicional">
+						<div class="instalaciones-local">
+							<div class="columna-contenedor-icono-instalaciones-resumen">
+								
+								<div class="contenedor-icono-instalaciones-resumen">
+									<span aria-hidden="true" class="icono-instalaciones-resumen transicion-enlace icon-cocina"></span>
+									<span aria-hidden="true" class="flecha-ayuda-icono-intalaciones icon-flecha-izquierda"></span>
+									<span class="texto-ayuda-icono-instalaciones-resumen">cocina</span>
+								</div>
+								<div class="contenedor-icono-instalaciones-resumen">
+									<span aria-hidden="true" class="icono-instalaciones-resumen transicion-enlace icon-parking"></span>
+									<span aria-hidden="true" class="flecha-ayuda-icono-intalaciones icon-flecha-izquierda"></span>
+									<span class="texto-ayuda-icono-instalaciones-resumen">parking</span>
+								</div>
+								<div class="contenedor-icono-instalaciones-resumen">
+									<span aria-hidden="true" class="icono-instalaciones-resumen transicion-enlace icon-juegos-mesa"></span>
+									<span aria-hidden="true" class="flecha-ayuda-icono-intalaciones icon-flecha-izquierda"></span>
+									<span class="texto-ayuda-icono-instalaciones-resumen">juegos de mesa</span>
+								</div>
+								<div class="contenedor-icono-instalaciones-resumen">
+									<span aria-hidden="true" class="icono-instalaciones-resumen transicion-enlace icon-equipo-karaoke"></span>
+									<span aria-hidden="true" class="flecha-ayuda-icono-intalaciones icon-flecha-izquierda"></span>
+									<span class="texto-ayuda-icono-instalaciones-resumen">equipo de karaoke</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+				<article class="local">
+					<div class="sombra-horizontal-ticket"></div>
+					<a href="local.html"><img src="./images/locales/local9/fotos/perfil.jpg" alt="nombre del local" class="transicion-enlace" /></a><div class="info-local">
+						<div class="sombra-perfil"></div>
+						<h3><a href="local.html" class="transicion-enlace">La vereda</a></h3>
+						<p class="provincia-local"><a href="buscador-locales.html" class="transicion-enlace">Valencia</a></p>
+						<p class="eventos-local"><a href="lista-eventos.html" class="transicion-enlace">1</a> eventos publicados, <a href="lista-eventos" class="transicion-enlace">1</a> activos</p>
+						<p class="descripcion-local">Aenean et ullamcorper sapien. Morbi interdum mollis sapien vitae sollicitudin.</p>
+						<a href="local.html" class="mas-info-wrapper"><span aria-hidden="true" class="icono-mas-info icon-mas transicion-enlace"></span><span class="texto-mas-info">más info</span></a>
+					</div><div class="info-local-adicional">
+						<div class="instalaciones-local">
+							<div class="columna-contenedor-icono-instalaciones-resumen">
+								<div class="contenedor-icono-instalaciones-resumen">
+									<span aria-hidden="true" class="icono-instalaciones-resumen transicion-enlace icon-biblioteca"></span>
+									<span aria-hidden="true" class="flecha-ayuda-icono-intalaciones icon-flecha-izquierda"></span>
+									<span class="texto-ayuda-icono-instalaciones-resumen">biblioteca</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+				<div class="paginacion-wrapper">
+					<div class="sombra-horizontal-ticket"></div>
+					<div class="paginacion-buscador">
+						<a href="buscador-eventos.html" class="paginacion-buscador-icono"><span aria-hidden="true" class="transicion-enlace icon-primero"></span></a>
+						<a href="buscador-eventos.html" class="paginacion-buscador-icono"><span aria-hidden="true" class="transicion-enlace icon-anterior"></span></a>
+						<div class="separacion-icono-enlace"></div>
+						<span class="paginacion-buscador-seleccionado">1</span>
+						<a href="buscador-eventos.html" class="transicion-enlace paginacion-buscador-enlace">2</a>
+						<a href="buscador-eventos.html" class="transicion-enlace paginacion-buscador-enlace">3</a>
+						<a href="buscador-eventos.html" class="transicion-enlace paginacion-buscador-enlace">4</a>
+						<a href="buscador-eventos.html" class="transicion-enlace paginacion-buscador-enlace">5</a>
+						<a href="buscador-eventos.html" class="transicion-enlace paginacion-buscador-enlace">6</a>
+						<a href="buscador-eventos.html" class="transicion-enlace paginacion-buscador-enlace">7</a>
+						<a href="buscador-eventos.html" class="transicion-enlace paginacion-buscador-enlace">8</a>
+						<a href="buscador-eventos.html" class="transicion-enlace paginacion-buscador-enlace">9</a>
+						<a href="buscador-eventos.html" class="transicion-enlace paginacion-buscador-enlace">10</a>
+						<div class="separacion-icono-enlace"></div>
+						<a href="buscador-eventos.html" class="paginacion-buscador-icono"><span aria-hidden="true" class="transicion-enlace icon-siguiente"></span></a>
+						<a href="buscador-eventos.html" class="paginacion-buscador-icono"><span aria-hidden="true" class="transicion-enlace icon-ultimo"></span></a>
+					</div>	
+				</div>
+			</section>
+			<div class="sombra-vertical-derecha"></div>
+		</div><div id="columna-derecha">
+			<div class="separacion-informacion-rapida-buscador"></div>
+			<section id="recomendaciones-eventos">
+				<div id="recomendaciones-eventos-borde-superior"></div>
+				<div id="recomendaciones-eventos-borde-inferior"></div>
+				<h2>Eventos recomendados</h2>
+				<p class="recomendaciones-introduccion">Lorem ipsum dolor sit amet, consecte elit.</p>
+				<article>
+					<a href="evento.html">
+						<div class="fecha-evento fondo-color-campeonato">
+							<p>
+								<span class="fecha-evento-dia">04</span>
+								<span class="fecha-evento-mes">ENE</span>
+							</p>
+							<div class="panel-fecha-evento panel-color-campeonato-mini"></div>
+						</div><figure class="foto-evento">
+							<div class="figure-borde-superior figure-borde-superior-naranja"></div>
+							<div class="figure-borde-inferior figure-borde-inferior-naranja"></div>
+							<img src="./images/locales/local1/eventos/evento1/perfil/evento1.jpg" alt="Nombre local" class="transicion-enlace" />
+						</figure></a><div class="sombra-perfil"></div><div class="descripcion-recomendacion">
+						<h4><a href="evento.html" class="transicion-enlace">Nombre evento</a></h4>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam faucibus lectus. </p>
+						<span class="precio-evento">107,95€</span>
+					</div>
+				</article>
+				<article>
+					<a href="evento.html">
+						<div class="fecha-evento fondo-color-lectura">
+							<p>
+								<span class="fecha-evento-dia">17</span>
+								<span class="fecha-evento-mes">ENE</span>
+							</p>
+							<div class="panel-fecha-evento panel-color-lectura-mini"></div>
+						</div><figure class="foto-evento">
+							<div class="figure-borde-superior figure-borde-superior-naranja"></div>
+							<div class="figure-borde-inferior figure-borde-inferior-naranja"></div>
+							<img src="./images/locales/local2/eventos/evento1/perfil/evento2.jpg" alt="Nombre local" class="transicion-enlace" />
+						</figure></a><div class="sombra-perfil"></div><div class="descripcion-recomendacion">
+						<h4><a href="evento.html" class="transicion-enlace">Nombre evento</a></h4>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam faucibus lectus. </p>
+						<span class="precio-evento">¡Gratis!</span>
+					</div>
+				</article>
+				<article>
+					<a href="evento.html">
+						<div class="fecha-evento fondo-color-concierto">
+							<p>
+								<span class="fecha-evento-dia">21</span>
+								<span class="fecha-evento-mes">FEB</span>
+							</p>
+							<div class="panel-fecha-evento panel-color-concierto-mini"></div>
+						</div><figure class="foto-evento">
+							<div class="figure-borde-superior figure-borde-superior-naranja"></div>
+							<div class="figure-borde-inferior figure-borde-inferior-naranja"></div>
+							<img src="./images/locales/local3/eventos/evento1/perfil/evento3.jpg" alt="Nombre local" class="transicion-enlace" />
+						</figure></a><div class="sombra-perfil"></div><div class="descripcion-recomendacion">
+						<h4><a href="evento.html" class="transicion-enlace">Nombre evento</a></h4>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam faucibus lectus. </p>
+						<span class="precio-evento">50€</span>
+					</div>
+				</article>
+				<article>
+					<a href="evento.html">
+						<div class="fecha-evento fondo-color-fiesta">
+							<p>
+								<span class="fecha-evento-dia">28</span>
+								<span class="fecha-evento-mes">FEB</span>
+							</p>
+							<div class="panel-fecha-evento panel-color-fiesta-mini"></div>
+						</div><figure class="foto-evento">
+							<div class="figure-borde-superior figure-borde-superior-naranja"></div>
+							<div class="figure-borde-inferior figure-borde-inferior-naranja"></div>
+							<img src="./images/locales/local4/eventos/evento1/perfil/evento4.jpg" alt="Nombre local" class="transicion-enlace" />
+						</figure></a><div class="sombra-perfil"></div><div class="descripcion-recomendacion">
+						<h4><a href="evento.html" class="transicion-enlace">Nombre evento</a></h4>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam faucibus lectus. </p>
+						<span class="precio-evento">20,50€</span>
+					</div>
+				</article>
+				<article>
+					<a href="evento.html">
+						<div class="fecha-evento fondo-color-monologo">
+							<p>
+								<span class="fecha-evento-dia">07</span>
+								<span class="fecha-evento-mes">MAR</span>
+							</p>
+							<div class="panel-fecha-evento panel-color-monologo-mini"></div>
+						</div><figure class="foto-evento">
+							<div class="figure-borde-superior figure-borde-superior-naranja"></div>
+							<div class="figure-borde-inferior figure-borde-inferior-naranja"></div>
+							<img src="./images/locales/local5/eventos/evento1/perfil/evento5.jpg" alt="Nombre local" class="transicion-enlace" />
+						</figure></a><div class="sombra-perfil"></div><div class="descripcion-recomendacion">
+						<h4><a href="evento.html" class="transicion-enlace">Nombre evento</a></h4>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam faucibus lectus. </p>
+						<span class="precio-evento">34€</span>
+					</div>
+				</article>
+				<article>
+					<a href="evento.html"><div class="fecha-evento fondo-color-magia">
+							<p>
+								<span class="fecha-evento-dia">22</span>
+								<span class="fecha-evento-mes">ABR</span>
+							</p>
+						<div class="panel-fecha-evento panel-color-magia-mini"></div>
+						</div><figure class="foto-evento">
+							<div class="figure-borde-superior figure-borde-superior-naranja"></div>
+							<div class="figure-borde-inferior figure-borde-inferior-naranja"></div>
+							<img src="./images/locales/local6/eventos/evento1/perfil/evento6.jpg" alt="Nombre local" class="transicion-enlace" />
+						</figure></a><div class="sombra-perfil"></div><div class="descripcion-recomendacion">
+						<h4><a href="evento.html" class="transicion-enlace">Nombre evento</a></h4>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam faucibus lectus. </p>
+						<span class="precio-evento">¡Gratis!</span>
+					</div>
+				</article>
+				<a id="boton-recomendacion" class="transicion-enlace" href="buscador-locales.html">- MÁS EVENTOS -</a>	
+			</section>
+			<section id="administrar-local">
+				<h3>¿Quieres estar en ociopolis?</h3>
+				<div id="alta-local">
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+					<a class="transicion-enlace efecto-boton" href="login.html">ALTA LOCAL</a>
+				</div>
+				<div id="gestion-local">
+					<a class="transicion-enlace" href="login.html">Gestiona tus locales</a>
+				</div>
+			</section>
+			<section id="contacto">
+				<div id="contacto-borde-superior"></div>
+				<div id="contacto-borde-inferior"></div>
+				<h3>Queremos saber tu opinión</h3>
+				<div id="icono-contacto"></div>
+				<div id="sugerencias">
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+					<a class="transicion-enlace efecto-boton" href="sugerencias.html">ESCRÍBENOS</a>
+				</div>
+			</section>
+		</div>
+		<section id="moviles">
+			<div class="sombra-horizontal-arriba"></div>
+			<div id="wrapper-moviles">
+				<div id="imagen-moviles"></div>
+				<div id="texto-moviles">
+					<h3><span>Mobile APP</span><span>Available now!</span></h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam in metus odio, ut euismod neque.</p>
+					<a href="http://www.apple.com" class="boton-moviles transicion-enlace">
+						<span aria-hidden="true" class="icon-movil icono-boton-moviles"></span>
+						<div class="texto-boton-moviles">
+							<span>Available on the</span>
+							<span class="desarrollador-moviles">App Store</span>
+						</div>
+					</a>
+					<p class="texto-auxiliar-moviles">Android coming soon</p>
+				</div>
+			</div>
+		</section>
+	</div>
+	<footer>
+		<div id="sombra-pie"></div>
+		<aside id="enlaces">
+			<h3>Menú</h3>
+			<p class="resumen-bloque">Lorem ipsum dolor sit amet</p>
+			<ul>
+				<li><a class="transicion-enlace" href="index.html">Inicio</a></li>
+				<li><a class="transicion-enlace" href="buscador-eventos.html">Eventos</a></li>
+				<li><a class="transicion-enlace" href="buscador-locales.html">Locales</a></li>
+				<li><a class="transicion-enlace" href="blog.html">Blog</a></li>
+				<li><a class="transicion-enlace" href="buscador.html">Buscador</a></li>
+				<li><a class="transicion-enlace" href="sugerencias.html">Sugerencias</a></li>
+				<li><a class="transicion-enlace" href="login.html">Alta de nuevos locales</a></li>
+				<li><a class="transicion-enlace" href="login.html">Gestiona tu local</a></li>
+			</ul>
+		</aside>	
+		<aside id="tweets">
+			<h3>Últimos tweets</h3>
+			<p class="resumen-bloque">Lorem ipsum dolor sit amet</p>
+			<a class="twitter-timeline" href="https://twitter.com/GrupoKalpana" data-widget-id="346621758448758784" data-chrome="noheader nofooter transparent noscrollbar noborders" data-theme="dark" data-link-color="#0088a8" data-tweet-limit="3">Tweets por @GrupoKalpana</a>
+			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+		</aside>
+		<aside id="contacto-pie">
+			<h3>Síguenos</h3>
+			<p class="resumen-bloque">Lorem ipsum dolor sit amet</p>
+			<ul>
+				<li><a class="transicion-enlace efecto-bola" id="icono-facebook" href="http://www.facebook.com"></a></li>
+				<li><a class="transicion-enlace efecto-bola" id="icono-twitter" href="http://twitter.com"></a></li>
+				<li><a class="transicion-enlace efecto-bola" id="icono-instagram" href="http://instagram.com"></a></li>
+			</ul>
+			<h3>Contacto</h3>
+			<p class="resumen-bloque">Lorem ipsum dolor sit amet</p>
+			<div>
+				<span id="icono-mail"></span>
+				<p class="info-contacto">
+					<span class="titulo-contacto">E-MAIL</span>
+					<span>
+						<a href="mailto:info@ociopolis.org" class="transicion-enlace">info@ociopolis.org</a>
+					</span>
+				</p>
+			</div>
+			<div>
+				<span id="icono-telefono"></span>
+				<p class="info-contacto">
+					<span class="titulo-contacto">TELF</span>
+					<span>(+34) 679882938</span>
+				</p>
+			</div>
+		</aside>
+		<div class="separador"></div>
+		<div id="informacion-complementaria">
+			<aside id="copyright">
+				<div id="logo-pie"></div>
+				<p>
+					2013© todos los derechos reservados | <a href="politica-privacidad.html" class="transicion-enlace">Política de privacidad</a>
+				</p>
+			</aside>
+			<aside id="sellos">
+				<ul>
+	                <li>
+	                    <a href="http://www.w3.org/html/" id="sello-html5"><span class="transicion-enlace"></span></a>
+	                </li>
+	                <li>
+	                    <a href="http://www.w3.org/Style/CSS/" id="sello-css3"><span class="transicion-enlace"></span></a>
+	                </li>
+	                <li>
+	                    <a href="http://www.grupokalpana.com" id="sello-kalpana"><span class="transicion-enlace"></span></a>
+	                </li>
+	            </ul>
+			</aside>
+		</div>
+	</footer>
+	<script src="./js/jquery-1.9.1.js"></script>
+	<script src="./js/jquery-ui-1.10.3.js"></script>
+	<script src="./js/scripts.js"></script>
+</body>
+</html>

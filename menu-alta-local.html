@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Alta local</title>
+
+	<link rel="shortcut icon" type="image/x-icon" href="./images/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="./css/estilos.css" media="screen" charset="utf-8">
+</head>
+<body>
+	<div id="modalBoxes">
+		<div id="mask"></div>
+		<div id="dialog">
+			<span aria-hidden="true" class="cerrar-modalBoxes icon-cancelar transicion-enlace"></span>
+			<p class="instrucciones-modalBoxes">Posiciona y redimensiona tu foto</p>
+			<div class="loading">
+				<img src="./images/loading.gif" alt="cargando..." width="120" height="120">
+			</div>
+			<figure class="imagen-modalBoxes">
+				<img alt="imagen subida">
+			</figure>
+			<div class="barra-zoom">
+				<span aria-hidden="true" class="icon-imagen icono-barra-zoom-pre transicion-enlace"></span>
+				<span aria-hidden="true" class="icon-imagen icono-barra-zoom-pos transicion-enlace"></span>
+				<a href="#" class="boton-barra-zoom no-enlace"></a>
+			</div>
+			<div class="botoneraModalBoxes">
+				<a href="#" class="botonCancelarModalBoxes transicion-enlace">CANCELAR</a>
+				<a href="#" class="botonAplicarModalBoxes transicion-enlace">APLICAR</a>
+			</div>
+		</div>
+	</div>
+	<header>
+		<div class="cabecera-fondo"></div>
+		<a href="index.html"><img src="images/logotipo.png" alt="Ociopolis. Búscate un plan." width="214px" height="114px"/></a>
+		<nav>
+			<ul>
+				<li id="nav-inicio">
+					<a class="transicion-enlace nav-separador" href="index.html">INICIO</a>
+				</li><li id="nav-eventos">
+					<a class="transicion-enlace nav-separador" href="buscador-eventos.html">EVENTOS</a>
+				</li><li id="nav-locales">
+					<a class="transicion-enlace nav-separador" href="buscador-locales.html">LOCALES</a>
+				</li><li id="nav-blog">
+					<a class="transicion-enlace" href="blog.html">BLOG</a>
+				</li>
+			</ul>
+		</nav>
+		<aside class="buscador-general">
+			<form action="buscador-general.html">
+				<div class="campo-formulario-wrapper">
+					<div class="campo-formulario-envoltura">
+						<input type="text" name="buscador-general-texto" id="buscador-general-texto" value="Buscar en ociopolis" class="campo-formulario" /><span id="buscador-general-submit" aria-hidden="true" class="icon-buscar campo-formulario-icono transicion-enlace"></span>
+					</div>
+				</div>
+			</form>
+		</aside>
+	</header>
+	<div id="wrapper-cuerpo">
+		<div id="columna-unica">
+			<div class="separacion-cabecera"></div>
+			<div class="separacion-monobloque-min"></div>
+			<div class="wrapper-panel-privado">
+				<section class="menu">
+					<div class="sombra-vertical-derecha"></div>
+					<article class="menu-usuario">
+						<ul>
+							<li><a href="menu-principal.html" class="transicion-enlace"><span aria-hidden="true" class="icon-usuario2"></span>Chuchi</a></li>
+						</ul>
+					</article>
+					<article class="menu-enlaces-principales">
+						<ul>
+							<li class="menu-enlaces-activo"><a href="menu-locales.html" class="transicion-enlace"><span aria-hidden="true" class="icon-casa"></span>locales</a></li>
+							<li><a href="menu-eventos.html" class="transicion-enlace"><span aria-hidden="true" class="icon-estrella"></span>eventos</a></li>
+							<li><a href="menu-promociones.html" class="transicion-enlace"><span aria-hidden="true" class="icon-regalo"></span>promociones</a></li>
+							<li><a href="menu-promociones.html" class="transicion-enlace"><span aria-hidden="true" class="icon-foto"></span>fotos</a></li>
+						</ul>
+					</article>
+					<article class="menu-enlaces-genericos">
+						<ul>
+							<li><a href="menu-estadisticas.html" class="transicion-enlace"><span aria-hidden="true" class="icon-estadisticas"></span>estadísticas</a></li>
+						</ul>
+					</article>
+					<article class="menu-enlaces-secundarios">
+						<ul>
+							<li><a href="menu-configuracion.html" class="transicion-enlace"><span aria-hidden="true" class="icon-configuracion"></span>configuración</a></li>
+							<li><a href="index.html" class="transicion-enlace"><span aria-hidden="true" class="icon-salida"></span>cerrar sesión</a></li>
+						</ul>
+					</article>
+				</section><section id="menu-alta-local">
+					<h1>Alta local</h1>
+					<p class="menu-privado-error"><span aria-hidden="true" class="icon-flecha-derecha"></span>Corrige los errores antes de continuar.</p>
+					<form class="menu-privado-edit-form" action="menu-locales.html">
+						<div class="columna-menu-alta-local columna-menu-alta-local-izquierda">
+							<div class="menu-privado-parametro wrapper-parametro-formulario">
+								<p class="menu-privado-label">Nombre<span aria-hidden="true" class="icon-asterisco"><span class="error-parametro-formulario"></span></p>
+								<div class="campo-formulario-wrapper">
+									<div class="campo-formulario-envoltura">
+										<input class="campo-formulario menu-privado-parametro-text campo-requerido" type="text" autocomplete="off" placeholder=""/>
+									</div>
+								</div>
+								<p class="menu-privado-label-explicacion">El nombre del local <span>no podrá ser modificado</span> una vez que el local haya sido dado de alta.</p>
+							</div>
+							<div class="menu-privado-parametro wrapper-parametro-formulario">
+								<p class="menu-privado-label">Dirección<span aria-hidden="true" class="icon-asterisco"><span class="error-parametro-formulario"></span></p>
+								<div class="campo-formulario-wrapper">
+									<div class="campo-formulario-envoltura">
+										<input id="campo-direccion" class="campo-formulario menu-privado-parametro-text campo-requerido" type="text" autocomplete="off" placeholder=""/>
+									</div>	
+								</div>
+								<div class="campo-formulario-wrapper-mapa">
+									<div id="map-canvas"></div>
+								</div>
+								<p class="menu-privado-label-explicacion">Puedes arrastrar el marcador para ajustar la ubicación.</p>
+							</div>
+							<div class="menu-privado-parametro wrapper-parametro-formulario">
+								<p class="menu-privado-label">Provincia<span aria-hidden="true" class="icon-asterisco"><span class="error-parametro-formulario"></span></p>
+								<div class="campo-formulario-wrapper">
+									<div class="campo-formulario-envoltura">
+										<input id="campo-provincia" class="campo-formulario menu-privado-parametro-text campo-requerido" type="text" readonly="true"/>
+									</div>	
+								</div>
+								<p class="menu-privado-label-explicacion">Este campo se autocompleta al introducir una dirección.</p>
+							</div>
+							<div class="menu-privado-parametro wrapper-parametro-formulario">
+								<p class="menu-privado-label">Correo electrónico<span class="error-parametro-formulario"></span></p>
+								<div class="campo-formulario-wrapper">
+									<div class="campo-formulario-envoltura">
+										<input class="campo-formulario menu-privado-parametro-text campo-email" type="text"/>
+									</div>	
+								</div>
+								<p class="menu-privado-label-explicacion">Introduce el correo electrónico del local.</p>
+							</div>
+							<div class="menu-privado-parametro wrapper-parametro-formulario">
+								<p class="menu-privado-label">Teléfono</p>
+								<div class="campo-formulario-wrapper">
+									<div class="campo-formulario-envoltura">
+										<input class="campo-formulario menu-privado-parametro-text" type="text"/>
+									</div>	
+								</div>
+								<p class="menu-privado-label-explicacion">Introduce el teléfono del local.</p>
+							</div>
+							<div class="menu-privado-parametro wrapper-parametro-formulario">
+								<p class="menu-privado-label">Instalaciones</p>
+								<div class="campo-formulario-wrapper-check-fila elemento-primero-vertical">
+									<div class="campo-formulario-wrapper elemento-primero-horizontal-izquierda">
+										<div class="campo-formulario-envoltura">
+											<div class="menu-privado-parametro-check">
+												<span aria-hidden="true" class="transicion-enlace icon-musica"></span>
+												<span class="menu-privado-parametro-check-info">Música.</span>
+												<input type="hidden" value="0">
+											</div>
+										</div>	
+									</div><div class="campo-formulario-wrapper">
+										<div class="campo-formulario-envoltura">
+											<div class="menu-privado-parametro-check">
+												<span aria-hidden="true" class="transicion-enlace icon-terraza"></span>
+												<span class="menu-privado-parametro-check-info">Terraza.</span>
+												<input type="hidden" value="0">
+											</div>
+										</div>	
+									</div><div class="campo-formulario-wrapper">
+										<div class="campo-formulario-envoltura">
+											<div class="menu-privado-parametro-check">
+												<span aria-hidden="true" class="transicion-enlace icon-wifi"></span>
+												<span class="menu-privado-parametro-check-info">Wifi.</span>
+												<input type="hidden" value="0">
+											</div>
+										</div>	
+									</div><div class="campo-formulario-wrapper">
+										<div class="campo-formulario-envoltura">
+											<div class="menu-privado-parametro-check">
+												<span aria-hidden="true" class="transicion-enlace icon-cocina"></span>
+												<span class="menu-privado-parametro-check-info">Cocina.</span>
+												<input type="hidden" value="0">
+											</div>
+										</div>	
+									</div><div class="campo-formulario-wrapper">
+										<div class="campo-formulario-envoltura">
+											<div class="menu-privado-parametro-check">
+												<span aria-hidden="true" class="transicion-enlace icon-tarjeta"></span>
+												<span class="menu-privado-parametro-check-info">Tarjeta de crédito.</span>
+												<input type="hidden" value="0">
+											</div>
+										</div>	
+									</div><div class="campo-formulario-wrapper">
+										<div class="campo-formulario-envoltura">
+											<div class="menu-privado-parametro-check">
+												<span aria-hidden="true" class="transicion-enlace icon-pista-baile"></span>
+												<span class="menu-privado-parametro-check-info">Pista de baile.</span>
+												<input type="hidden" value="0">
+											</div>
+										</div>	
+									</div><div class="campo-formulario-wrapper">
+										<div class="campo-formulario-envoltura">
+											<div class="menu-privado-parametro-check">
+												<span aria-hidden="true" class="transicion-enlace icon-guardarropa"></span>
+												<span class="menu-privado-parametro-check-info">Guardarropa.</span>
+												<input type="hidden" value="0">
+											</div>
+										</div>	
+									</div>
+								</div>
+								<div class="campo-formulario-wrapper-check-fila">
+									<div class="campo-formulario-wrapper elemento-primero-horizontal-izquierda">
+										<div class="campo-formulario-envoltura">
+											<div class="menu-privado-parametro-check">
+												<span aria-hidden="true" class="transicion-enlace icon-minusvalidos"></span>
+												<span class="menu-privado-parametro-check-info">Acceso minusválidos.</span>
+												<input type="hidden" value="0">
+											</div>
+										</div>	
+									</div><div class="campo-formulario-wrapper">
+										<div class="campo-formulario-envoltura">
+											<div class="menu-privado-parametro-check">
+												<span aria-hidden="true" class="transicion-enlace icon-parking"></span>
+												<span class="menu-privado-parametro-check-info">Parking.</span>
+												<input type="hidden" value="0">
+											</div>
+										</div>	
+									</div><div class="campo-formulario-wrapper">
+										<div class="campo-formulario-envoltura">
+											<div class="menu-privado-parametro-check">
+												<span aria-hidden="true" class="transicion-enlace icon-juegos-mesa"></span>
+												<span class="menu-privado-parametro-check-info">Juegos de mesa.</span>
+												<input type="hidden" value="0">
+											</div>
+										</div>	
+									</div><div class="campo-formulario-wrapper">
+										<div class="campo-formulario-envoltura">
+											<div class="menu-privado-parametro-check">
+												<span aria-hidden="true" class="transicion-enlace icon-juegos-salon"></span>
+												<span class="menu-privado-parametro-check-info">Juegos de salón.</span>
+												<input type="hidden" value="0">
+											</div>
+										</div>	
+									</div><div class="campo-formulario-wrapper">
+										<div class="campo-formulario-envoltura">
+											<div class="menu-privado-parametro-check">
+												<span aria-hidden="true" class="transicion-enlace icon-biblioteca"></span>
+												<span class="menu-privado-parametro-check-info">Biblioteca.</span>
+												<input type="hidden" value="0">
+											</div>
+										</div>	
+									</div><div class="campo-formulario-wrapper">
+										<div class="campo-formulario-envoltura">
+											<div class="menu-privado-parametro-check">
+												<span aria-hidden="true" class="transicion-enlace icon-television"></span>
+												<span class="menu-privado-parametro-check-info">Televisión.</span>
+												<input type="hidden" value="0">
+											</div>
+										</div>	
+									</div><div class="campo-formulario-wrapper">
+										<div class="campo-formulario-envoltura">
+											<div class="menu-privado-parametro-check">
+												<span aria-hidden="true" class="transicion-enlace icon-equipo-karaoke"></span>
+												<span class="menu-privado-parametro-check-info">Equipo de karaoke.</span>
+												<input type="hidden" value="0">
+											</div>
+										</div>	
+									</div>
+								</div>
+								<p class="menu-privado-label-explicacion">Pasa el ratón por encima para ver la descripción.</p>
+							</div>
+						</div><div class="columna-menu-alta-local columna-menu-alta-local-derecha">
+							<div class="menu-privado-parametro wrapper-parametro-formulario">
+								<p class="menu-privado-label">Descripción</p>
+								<div class="campo-formulario-wrapper">
+									<div class="campo-formulario-envoltura">
+										<textarea class="campo-formulario menu-privado-parametro-text menu-privado-parametro-textarea"></textarea>
+									</div>	
+								</div>
+								<p class="menu-privado-label-explicacion">Adjunta una descripción de tu local incluyendo toda la información que pueda ser relevante.</p>
+							</div>
+							<div class="menu-privado-parametro wrapper-parametro-formulario">
+								<p class="menu-privado-label">Resumen</p>
+								<div class="campo-formulario-wrapper">
+									<div class="campo-formulario-envoltura">
+										<textarea class="campo-formulario menu-privado-parametro-text menu-privado-parametro-textarea-small limite-caracteres" maxlength="80"></textarea>
+									</div>	
+								</div>
+								<p class="menu-privado-label-explicacion">Inlcuye un breve resumen sobre tu local.<span class="limite-caracteres">80</span></p>
+							</div>
+							<div class="menu-privado-parametro wrapper-parametro-formulario">
+								<p class="menu-privado-label">Logotipo</p>
+								<div class="campo-formulario-wrapper-foto">
+								</div><div class="campo-formulario-wrapper-foto-botones">
+									<a href="#" class="transicion-enlace subir-foto" data-width="127" data-height="94" data-width-original="127" data-height-original="94">SUBIR FOTO</a>
+									<a href="#" class="transicion-enlace eliminar-foto">ELIMINAR FOTO</a>
+								</div>
+								<p class="menu-privado-label-explicacion">Adjunta el logotipo de tu local. Es recomendable que tenga un tamaño superior a 127x94 píxeles.</p>
+							</div>
+							<div class="menu-privado-parametro wrapper-parametro-formulario">
+								<p class="menu-privado-label">Cabecera</p>
+								<div class="campo-formulario-wrapper-foto">
+								</div><div class="campo-formulario-wrapper-foto-botones">
+									<a href="#" class="transicion-enlace subir-foto" data-width="744" data-height="136" data-width-original="1920" data-height-original="351">SUBIR FOTO</a>
+									<a href="#" class="transicion-enlace eliminar-foto">ELIMINAR FOTO</a>
+								</div>
+								<p class="menu-privado-label-explicacion">Adjunta una imagen para la cabecera. Es recomendable que tenga un tamaño superior a 1920x351 píxeles.</p>
+							</div>
+							<div class="menu-privado-parametro wrapper-parametro-formulario">
+								<p class="menu-privado-label">Identificador del comercial</p>
+								<div class="campo-formulario-wrapper">
+									<div class="campo-formulario-envoltura">
+										<input class="campo-formulario menu-privado-parametro-text" type="text"/>
+									</div>	
+								</div>
+								<p class="menu-privado-label-explicacion">Si tienes asignado un comercial introduce su identificador.</p>
+							</div>
+						</div>
+						<p class="wrapper-requeridos">
+							<span aria-hidden="true" class="icon-asterisco icono-requeridos"></span><span class="texto-requeridos">campos requeridos</span>
+						</p>
+					</form>
+					<form enctype="multipart/form-data" class="invisible"><input type="file" name="imagenEdicion" class="seleccion-fichero"></form>
+					<a href="menu-locales.html" class="menu-privado-cancelar transicion-enlace">CANCELAR</a><a href="menu-locales.html" class="menu-privado-submit transicion-enlace">ALTA LOCAL</a>
+				</section>
+			</div>
+			<div class="separacion-monobloque"></div>
+		</div>
+	</div>
+	<div id="separador-horizontal">
+		<div class="sombra-horizontal-abajo"></div>
+	</div>
+	<footer>
+		<div id="sombra-pie"></div>
+		<aside id="enlaces">
+			<h3>Menú</h3>
+			<p class="resumen-bloque">Lorem ipsum dolor sit amet</p>
+			<ul>
+				<li><a class="transicion-enlace" href="index.html">Inicio</a></li>
+				<li><a class="transicion-enlace" href="buscador-eventos.html">Eventos</a></li>
+				<li><a class="transicion-enlace" href="buscador-locales.html">Locales</a></li>
+				<li><a class="transicion-enlace" href="blog.html">Blog</a></li>
+				<li><a class="transicion-enlace" href="buscador.html">Buscador</a></li>
+				<li><a class="transicion-enlace" href="sugerencias.html">Sugerencias</a></li>
+				<li><a class="transicion-enlace" href="login.html">Alta de nuevos locales</a></li>
+				<li><a class="transicion-enlace" href="login.html">Gestiona tu local</a></li>
+			</ul>
+		</aside>	
+		<aside id="tweets">
+			<h3>Últimos tweets</h3>
+			<p class="resumen-bloque">Lorem ipsum dolor sit amet</p>
+			<a class="twitter-timeline" href="https://twitter.com/GrupoKalpana" data-widget-id="346621758448758784" data-chrome="noheader nofooter transparent noscrollbar noborders" data-theme="dark" data-link-color="#0088a8" data-tweet-limit="3">Tweets por @GrupoKalpana</a>
+			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+		</aside>
+		<aside id="contacto-pie">
+			<h3>Síguenos</h3>
+			<p class="resumen-bloque">Lorem ipsum dolor sit amet</p>
+			<ul>
+				<li><a class="transicion-enlace efecto-bola" id="icono-facebook" href="http://www.facebook.com"></a></li>
+				<li><a class="transicion-enlace efecto-bola" id="icono-twitter" href="http://twitter.com"></a></li>
+				<li><a class="transicion-enlace efecto-bola" id="icono-instagram" href="http://instagram.com"></a></li>
+			</ul>
+			<h3>Contacto</h3>
+			<p class="resumen-bloque">Lorem ipsum dolor sit amet</p>
+			<div>
+				<span id="icono-mail"></span>
+				<p class="info-contacto">
+					<span class="titulo-contacto">E-MAIL</span>
+					<span>
+						<a href="mailto:info@ociopolis.org" class="transicion-enlace">info@ociopolis.org</a>
+					</span>
+				</p>
+			</div>
+			<div>
+				<span id="icono-telefono"></span>
+				<p class="info-contacto">
+					<span class="titulo-contacto">TELF</span>
+					<span>(+34) 679882938</span>
+				</p>
+			</div>
+		</aside>
+		<div class="separador"></div>
+		<div id="informacion-complementaria">
+			<aside id="copyright">
+				<div id="logo-pie"></div>
+				<p>
+					2013© todos los derechos reservados | <a href="politica-privacidad.html" class="transicion-enlace">Política de privacidad</a>
+				</p>
+			</aside>
+			<aside id="sellos">
+				<ul>
+	                <li>
+	                    <a href="http://www.w3.org/html/" id="sello-html5"><span class="transicion-enlace"></span></a>
+	                </li>
+	                <li>
+	                    <a href="http://www.w3.org/Style/CSS/" id="sello-css3"><span class="transicion-enlace"></span></a>
+	                </li>
+	                <li>
+	                    <a href="http://www.grupokalpana.com" id="sello-kalpana"><span class="transicion-enlace"></span></a>
+	                </li>
+	            </ul>
+			</aside>
+		</div>
+	</footer>
+	<script src="./js/jquery-1.9.1.js" type="text/javascript" charset="utf-8"></script>
+	<script src="./js/scripts.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+		initialize_wrapper(null, null, null, null);
+	</script>
+</body>
+</html>
